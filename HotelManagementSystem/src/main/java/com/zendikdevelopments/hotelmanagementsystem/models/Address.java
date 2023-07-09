@@ -1,7 +1,11 @@
 package com.zendikdevelopments.hotelmanagementsystem.models;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "addresses")
 public class Address extends BaseEntity {
     private String country;
     private String county;

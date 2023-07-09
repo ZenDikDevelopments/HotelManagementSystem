@@ -1,24 +1,18 @@
 package com.zendikdevelopments.hotelmanagementsystem.models;
 
-public class Role {
-    private long id;
-    private String name;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-    public Role(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+@Entity
+@Table(name = "roles")
+public class Role extends BaseEntity {
+    private String name;
 
     public Role() {
     }
 
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    @Column(name = "name", nullable = false, length = 20)
     public String getName() {
         return name;
     }
