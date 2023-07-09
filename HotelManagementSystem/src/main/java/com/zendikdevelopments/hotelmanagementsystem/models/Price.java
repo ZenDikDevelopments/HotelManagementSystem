@@ -1,25 +1,14 @@
 package com.zendikdevelopments.hotelmanagementsystem.models;
 
-public class Price {
-    private long id;
-    private double amount;
+import jakarta.persistence.Column;
 
-    public Price(long id, double amount) {
-        this.id = id;
-        this.amount = amount;
-    }
+public class Price {
+    private Double amount;
 
     public Price() {
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    @Column(name = "amount", nullable = false, precision = 6, scale = 2)
     public double getAmount() {
         return amount;
     }
