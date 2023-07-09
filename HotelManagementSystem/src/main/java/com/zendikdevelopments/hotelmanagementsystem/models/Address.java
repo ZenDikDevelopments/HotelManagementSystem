@@ -1,33 +1,18 @@
 package com.zendikdevelopments.hotelmanagementsystem.models;
 
-public class Address {
-    private long id;
+import jakarta.persistence.Column;
+
+public class Address extends BaseEntity {
     private String country;
     private String county;
     private String municipality;
     private String town;
     private String addressName;
 
-    public Address(long id, String country, String county, String municipality, String town, String addressName) {
-        this.id = id;
-        this.country = country;
-        this.county = county;
-        this.municipality = municipality;
-        this.town = town;
-        this.addressName = addressName;
-    }
-
     public Address() {
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    @Column(name = "country", length = 50)
     public String getCountry() {
         return country;
     }
@@ -36,6 +21,7 @@ public class Address {
         this.country = country;
     }
 
+    @Column(name = "county", length = 50)
     public String getCounty() {
         return county;
     }
@@ -44,6 +30,7 @@ public class Address {
         this.county = county;
     }
 
+    @Column(name = "municipality", length = 50)
     public String getMunicipality() {
         return municipality;
     }
@@ -52,6 +39,7 @@ public class Address {
         this.municipality = municipality;
     }
 
+    @Column(name = "town", length = 50)
     public String getTown() {
         return town;
     }
@@ -60,6 +48,7 @@ public class Address {
         this.town = town;
     }
 
+    @Column(name = "address", length = 150)
     public String getAddressName() {
         return addressName;
     }
