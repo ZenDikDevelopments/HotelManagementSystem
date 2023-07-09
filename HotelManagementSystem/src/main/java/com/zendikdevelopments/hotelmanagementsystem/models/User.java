@@ -1,25 +1,19 @@
 package com.zendikdevelopments.hotelmanagementsystem.models;
 
-public class User {
-    private long id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "users")
+public class User extends BaseEntity{
     private String email;
     private String password;
 
-    public User(long id, String email, String password) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-    }
     public User() {
     }
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    @Column(name = "email", nullable = false, unique = true)
     public String getEmail() {
         return email;
     }
@@ -28,6 +22,7 @@ public class User {
         this.email = email;
     }
 
+    @Column(name = "password", nullable = false)
     public String getPassword() {
         return password;
     }

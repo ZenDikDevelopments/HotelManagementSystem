@@ -1,29 +1,19 @@
 package com.zendikdevelopments.hotelmanagementsystem.models;
 
-public class Room {
-    private long id;
-    private int roomNumber;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "rooms")
+public class Room extends BaseEntity{
+    private Integer roomNumber;
     private String roomType;
     private String status;
 
-    public Room(long id, int roomNumber, String roomType, String status) {
-        this.id = id;
-        this.roomNumber = roomNumber;
-        this.roomType = roomType;
-        this.status = status;
-    }
-
     public Room() {
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    @Column(name = "number", nullable = false, unique = true)
     public int getRoomNumber() {
         return roomNumber;
     }
@@ -32,6 +22,7 @@ public class Room {
         this.roomNumber = roomNumber;
     }
 
+    @Column(name = "type", length = 50)
     public String getRoomType() {
         return roomType;
     }
@@ -40,6 +31,7 @@ public class Room {
         this.roomType = roomType;
     }
 
+    @Column(name = "status", length = 10)
     public String getStatus() {
         return status;
     }
